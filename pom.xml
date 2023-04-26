@@ -6,10 +6,10 @@
   <version>3.0.1</version>
 
   <scm>
-    <developerConnection>scm:git:https://github.com/jduchnowskigd/spring-petclinic</developerConnection>
+    <developerConnection>scm:git:https://github.com/jduchnowskigd/spring-petclinic.git</developerConnection>
     <tag>spring-petclinic-3.0.1</tag>
   </scm>
-  <!-- <distributionManagement>
+  <distributionManagement>
     <repository>
         <id>releases</id>
         <url>https://myserver/repo</url>
@@ -18,7 +18,7 @@
         <id>snapshots</id>
         <url>https://myserver/repo</url>
     </snapshotRepository>
-  </distributionManagement> -->
+  </distributionManagement>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
