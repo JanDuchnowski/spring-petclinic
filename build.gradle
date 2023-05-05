@@ -15,7 +15,7 @@ sourceCompatibility = '17'
 repositories {
   mavenCentral()
 }
-
+// Example change
 ext.webjarsFontawesomeVersion = "4.7.0"
 ext.webjarsBootstrapVersion = "5.2.3"
 
