@@ -9,7 +9,7 @@ plugins {
 apply plugin: 'java'
 
 group = 'org.springframework.samples'
-version = '0.1.1'
+version = scmVersion.version
 sourceCompatibility = '17'
 
 repositories {
