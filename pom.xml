@@ -3,22 +3,24 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.0.0-SNAPSHOT</version>
+  <version>3.0.1</version>
 
   <scm>
     <developerConnection>scm:git:https://github.com/jduchnowskigd/spring-petclinic.git</developerConnection>
     <tag>spring-petclinic-3.0.1</tag>
   </scm>
-  <!-- <distributionManagement>
+<distributionManagement>
     <repository>
-        <id>releases</id>
-        <url>https://myserver/repo</url>
+      <id>nexus</id>
+      <name>Releases</name>
+      <url>http://localhost:8082/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
-        <id>snapshots</id>
-        <url>https://myserver/repo</url>
+      <id>nexus</id>
+      <name>Snapshot</name>
+      <url>http://localhost:8082/repository/maven-snapshots/</url>
     </snapshotRepository>
-  </distributionManagement> -->
+  </distributionManagement>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
