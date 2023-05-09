@@ -3,21 +3,23 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.0.1</version>
+  <version>3.0.0-SNAPSHOT</version>
 
   <scm>
     <developerConnection>scm:git:https://github.com/jduchnowskigd/spring-petclinic.git</developerConnection>
     <tag>spring-petclinic-3.0.1</tag>
   </scm>
- <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://localhost:8082/repository/maven-snapshots/</url>
-    </snapshotRepository>
+<distributionManagement>
     <repository>
-      <id>nexus-releases</id>
+      <id>nexus</id>
+      <name>Releases</name>
       <url>http://localhost:8082/repository/maven-releases/</url>
     </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Snapshot</name>
+      <url>http://localhost:8082/repository/maven-snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <parent>
@@ -276,8 +278,20 @@
 
   <repositories>
     <repository>
-      <id>maven-group</id>
-      <url>http://localhost:8082/repository/maven-group/</url>
+      <id>spring-snapshots</id>
+      <name>Spring Snapshots</name>
+      <url>https://repo.spring.io/snapshot</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/milestone</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
     </repository>
   </repositories>
 
@@ -388,6 +402,7 @@
                       <pluginExecutionFilter>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
+                        <versionRange>[1,)</versionRange>
                         <goals>
                           <goal>build-info</goal>
                         </goals>
