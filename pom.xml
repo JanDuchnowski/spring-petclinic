@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.0.25-SNAPSHOT</version>
+  <version>3.0.26</version>
 
   <scm>
     <developerConnection>scm:git:https://github.com/jduchnowskigd/spring-petclinic.git</developerConnection>
-    <tag>spring-petclinic-3.0.22</tag>
+    <tag>spring-petclinic-3.0.26</tag>
   </scm>
 <distributionManagement>
    <snapshotRepository>
