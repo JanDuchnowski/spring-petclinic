@@ -3,22 +3,23 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.0.6-SNAPSHOT</version>
+  <version>3.0.26-SNAPSHOT</version>
 
   <scm>
     <developerConnection>scm:git:https://github.com/jduchnowskigd/spring-petclinic.git</developerConnection>
-    <tag>spring-petclinic-3.0.8</tag>
+    <tag>spring-petclinic-3.0.22</tag>
   </scm>
- <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
+<distributionManagement>
+   <snapshotRepository>
+      <id>nexus</id>
       <url>http://localhost:8082/repository/maven-snapshots/</url>
-    </snapshotRepository>
+   </snapshotRepository>
     <repository>
-      <id>nexus-releases</id>
+      <id>nexus</id>
       <url>http://localhost:8082/repository/maven-releases/</url>
-    </repository>
-  </distributionManagement>
+   </repository>
+</distributionManagement>
+
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -131,6 +132,27 @@
 
   <build>
     <plugins>
+
+
+<plugin>
+   <groupId>org.sonatype.plugins</groupId>
+   <artifactId>nexus-staging-maven-plugin</artifactId>
+   <version>1.5.1</version>
+   <executions>
+      <execution>
+         <id>default-deploy</id>
+         <phase>deploy</phase>
+         <goals>
+            <goal>deploy</goal>
+         </goals>
+      </execution>
+   </executions>
+   <configuration>
+      <serverId>nexus</serverId>
+      <nexusUrl>http://localhost:8082</nexusUrl>
+      <skipStaging>true</skipStaging>
+   </configuration>
+</plugin>
       <plugin>
         <groupId>io.spring.javaformat</groupId>
         <artifactId>spring-javaformat-maven-plugin</artifactId>
@@ -276,8 +298,12 @@
 
   <repositories>
     <repository>
-      <id>maven-group</id>
-      <url>http://localhost:8082/repository/maven-group/</url>
+      <id>maven-snapshots</id>
+      <url>http://localhost:8082/repository/maven-proxy-snapshot/</url>
+    </repository>
+    <repository>
+      <id>maven-releases</id>
+      <url>http://localhost:8082/repository/maven-proxy-release/</url>
     </repository>
   </repositories>
 
